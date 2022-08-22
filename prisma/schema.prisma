@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+//enums
+
+enum ROLE {
+  Admin
+  Normal
+}
+
+// Models
+
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  name      String
+  contact   String
+  email     String   @unique
+  role      ROLE
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Movie {
+  id          String @id @default(uuid())
+  type        String
+  title       String
+  genre       String
+  description String @db.Text
+  cast        String
+  rating      String
+  price       Float
+  image       String
+}

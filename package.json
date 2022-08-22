@@ -1,0 +1,31 @@
+{
+  "name": "movoti-backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "prisma": "^4.2.1"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^9.0.1",
+    "@prisma/client": "^4.2.1",
+    "apollo-server-express": "^3.10.1",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "validator": "^13.7.0"
+  }
+}
