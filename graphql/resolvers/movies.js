@@ -13,5 +13,17 @@ export default {
         throw error;
       }
     },
+    getonemovie: async (_, args) => {
+      try {
+        let { id } = args.userinput;
+        const movie = await db.movie.findUnique({
+          where: {
+            id: id,
+          },
+        });
+
+        return movie;
+      } catch (error) {}
+    },
   },
 };

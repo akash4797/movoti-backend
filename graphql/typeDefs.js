@@ -19,6 +19,10 @@ export default gql`
     password: String!
   }
 
+  input FindOneMovieInput {
+    id: String!
+  }
+
   type Movie {
     id: String!
     title: String!
@@ -51,6 +55,7 @@ export default gql`
   type Query {
     login(userinput: LoginInput): User!
     getmovies: [Movie]!
+    getonemovie(userinput: FindOneMovieInput): Movie!
   }
   type Mutation {
     register(userinput: RegisterInput): User!
